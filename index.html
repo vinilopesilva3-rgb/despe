@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="stylesheet" href="css.css">
+    <title>Document</title>
+    <link rel="shortcut icon" href="icone-page/home-page.png" type="image/x-icon">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bungee+Inline&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Limelight&display=swap" rel="stylesheet">
+    <style>
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+</style>
+
+    
+</head>
+<body>
+   <header id="header"> <img id="imgLogo" src="imagens/image (1).png"> 
+<nav id="nav">
+   <p><img class="iconeNav" src="icones/home.png">Home</p>
+   <p><img class="iconeNav" src="icones/doc.png">Relatorio</p>
+   <p><img class="iconeNav" src="icones/config.png">Configurações</p>
+   <p><img class="iconeNav" src="icones/transacao.png">Transações</p>
+
+</nav>
+
+   
+</header>
+      <p id="voltar-nav"></p>
+            <p id="abrir-nav"></p>
+
+
+
+   <section id="content-geral">
+      <div id="dash">
+ <div id="total-content">
+    <p id="titulo-despesa" class="titulo-dash">Despesa total</p>
+    <p id="total"></p>
+    </div>
+    <div id="content-maior-gasto">
+    <p class="titulo-dash">Maior gasto</p>
+            <p id="maior-categoria">farmacia</p>
+            <p id="maior-despesa"></p>
+    </div>
+
+    </div>
+   
+   
+   
+ <form id="form">
+       <header id="headerEditar"><img id="imgLapisedi" src="imagens/editar.png"><p>Adicionar despesa</p></header>
+
+                <p id="erro" class="erro"></p>
+
+                <div class="inputCss">
+        <input  id="descricao" type="text"  required >
+        <label for="descricao">Adicionar</label>
+
+                </div>
+                <div class="inputCss">
+                <input  id="valor" type="number" min="0" step="0.01" required >
+        <label for="valor">Valor</label>
+
+                </div>
+                <div class="inputCss">
+        <input  id="data" type="date" min="2024-01-01" max="2026-12-31">
+        <label for="data">Data</label>
+
+                </div>
+                
+        <select id="categoria">
+         <option value="Alimentação">Alimentação</option>
+         <option value="Transporte">Transporte</option>
+         <option value="Farmacia">Farmacia</option>
+         <option value="Banco">Banco</option>
+         <option value="Mercado">Mercado</option>
+         <option value="Outros">Outros</option>
+
+        </select>
+        <button class="btnuniversal" onclick="adicionar()">Adicionar</button>
+
+    </form>
+
+    </div>
+ <div id="content-form">
+   <header id="header-lista">
+    
+      <div>
+         <label>Filtrar</label>
+         <select>
+
+         <option>Categoria</option>
+         <option>Descrição</option>
+      </select></div>
+   </header>
+    <div id="lista">
+     
+    </div>
+
+    </div>
+    
+   </section>
+   
+</body>
+<script src="mint.js"></script>
+</html>

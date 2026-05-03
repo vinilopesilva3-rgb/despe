@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css.css">
+            <link rel="shortcut icon" href="imagens/editar.png" type="image/x-icon">
+
+
+    <title>Document</title>
+</head>
+<body>
+      <header id="header"> <img id="imgLogo" src="imagens/image (1).png"> 
+<nav id="nav">
+   <p><img class="iconeNav" src="icones/home.png">Home
+   </p>
+   <p><img class="iconeNav" src="icones/doc.png">Relatorio</p>
+   <p><img class="iconeNav" src="icones/config.png">Configurações</p>
+   <p><img class="iconeNav" src="icones/transacao.png">Transações</p></nav>
+</header>
+    <section id="content-geral">
+
+ <form id="form">
+    <header id="headerEditar"><img id="imgLapisedi" src="imagens/editar.png"><p>Editar despesa</p></header>
+                <p id="erro" class="erro"></p>
+<div class="inputCss">
+        <input id="descricaoEditar" type="text"  required >
+                <label for="descricao">Adicionar</label>
+
+    </div>
+                    <div class="inputCss">
+
+                <input  id="valorEditar" type="number" min="0" step="0.01"  required >
+               
+                <label for="valor">Valor</label>
+</div>
+                <div class="inputCss">
+
+                <input  id="dataEditar" type="date" >
+                 <label for="data">Data</label>
+
+                </div>
+                <select id="categoria">
+         <option value="Alimentação">Alimentação</option>
+         <option value="Transporte">Transporte</option>
+         <option value="Farmacia">Farmacia</option>
+         <option value="Banco">Banco</option>
+         <option value="Mercado">Mercado</option>
+         <option value="Outros">Outros</option>
+                  <option value="outros">Outros</option>
+
+        </select>
+        <button class="btnuniversal" type="button" onclick="editar()" >Salvar</button>
+        
+
+
+    </form>
+ 
+    
+   </section>
+   
+</body>
+<script src="editar.js"></script>
+
+</html>

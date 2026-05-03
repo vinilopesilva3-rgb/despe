@@ -1,0 +1,52 @@
+    const params = new URLSearchParams(window.location.search)
+    const id = params.get('id')
+
+window.onload = async () => {
+
+    alert("1 - JS rodou")
+
+
+    alert("2 - ID: " + id)
+
+    try {
+        const res = await fetch(`http://localhost:4000/despesa/${id}`)
+        alert("3 - fetch ok")
+
+        const d = await res.json()
+        alert("4 - dados chegaram")
+
+        console.log(d)
+
+        document.getElementById("descricaoEditar").value = d.descricao
+        document.getElementById("valorEditar").value = d.valor
+        document.getElementById("dataEditar").value = d.data
+
+        alert("5 - preencheu inputs")
+
+    } catch (erro) {
+        alert("ERRO: " + erro)
+        console.log(erro)
+    }
+}
+async function editar(){
+
+    
+
+       const descricao= document.getElementById("descricaoEditar").value
+       const valorEditar=document.getElementById("valorEditar").value
+        const data= document.getElementById("dataEditar").value
+         await fetch(`http://localhost:4000/despesa/${id}`,{
+            method:"PUT",
+            headers:{"content-type":"application/json"},
+            body:JSON.stringify({descricao,valor:valorEditar,data})
+            
+        })
+         alert("Editado com sucesso")
+
+    window.location.href = "index.html"
+}
+
+
+const valorEditar=parseInt(document.getElementById("valorEditar"))
+const dataEditar=document.getElementById("dataEditar")
+ const dadosNomenome= dados.slice().sort((a,b)=>a.descricao.localeCompare(b.descricao)).reverse();
